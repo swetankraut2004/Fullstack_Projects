@@ -1,0 +1,135 @@
+/*
+*{
+    margin: 0;
+    padding: 0; 
+} 
+
+*Before starting any project, we start by using these CSS properties to start designing our web page freshly, without giving any extra space.
+*/
+
+*{
+    margin: 0;
+    padding: 0; 
+    font-family: "Poppins", "sans-serif";
+} 
+
+.main_box {
+    background: url("photo.jpg");
+    height: 100vh; /* It is given 100% height of the complete viewport or page which can be displayed. 
+    Refer: https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts */
+    background-size: cover; /* Covers the entire page */
+}
+
+.btn_one i{ /* i.e. X button */
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px; /* Defines the height of the complete line that the element is occupying from the top margin of the page */
+    cursor: pointer; /* Displays the hand pointer icon when the element is hovered over */ 
+    transition: all 0.2s linear;
+}
+
+.sidebar_menu {
+    position: fixed;
+    left: -300px; /* To hide the sidebar menu */
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s linear; /* This makes the sidebar menu appear smoothly after clicking the hamburger icon */
+}
+
+.sidebar_menu .logo {
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    height: 60px;
+}
+
+.sidebar_menu .logo a{
+    position: absolute;
+    left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar_menu .btn_two { /* i.e. hamburger menu button */
+    color: grey;
+    font-size: 25px;
+    line-height: 60px;
+    position: absolute;
+    left: 275px;
+    /* opacity: 0; It will hide the X button for now */
+    transition: all 0.2s linear;
+}
+
+.sidebar_menu .menu {
+    position: absolute;
+    width: 100%;
+    top: 80px;
+}
+
+.sidebar_menu .menu li {
+    margin-top: 6px;
+    padding: 14px 20px;
+}
+
+.sidebar_menu .menu i, a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar_menu .menu i {
+    padding-right: 8px;
+}
+
+.sidebar_menu .social_media {
+    position: absolute;
+    left: 25%;
+    bottom: 50px;
+}
+
+.sidebar_menu .social_media i {
+    color: white;
+    opacity: 0.5;
+    padding: 0 5px;
+}
+
+#check {
+    display: none; /* Hides the checkbox used instead of the hamburger menu, but now the hamburger icon will function as a checkbox */
+}
+
+.sidebar_menu .menu li:hover {
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.btn_one i:hover {
+    font-size: 40px;
+}
+
+.btn_two i:hover {
+    font-size: 30px;
+}
+
+.sidebar_menu .social_media i:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#check:checked ~ .sidebar_menu { /* where ~ denotes sibling connector of the selector */
+    left: 0;  /* When the checkbox is checked by clicking on the hamburger icon, the sidebar menu will move to its original position */
+}
+
+#check:checked ~ .btn_one i {
+    opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i {
+    opacity: 1;  /* Displays the 'X' icon when the checkbox is checked, and hides it when unchecked */
+}

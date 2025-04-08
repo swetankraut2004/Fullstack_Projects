@@ -1,0 +1,8 @@
+To implement Simon says game:
+
+Requirements:
+1) key press - game start
+2) btn flash + level 1 :- button flashes and level increases by 1 if followed correct pattern
+3) for every button (we add an Event listener) :- to check whether the correct button is pressed.
+4) Check - a) if correct pattern level up
+           b) else Game Over
